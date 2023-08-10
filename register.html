@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Header starts-->
+
+    <header>
+
+        <div class="nav container">
+
+            <a href="#" class="logo">MiniBlog</a>
+            <ul>
+                <li><a href="index.html" class="login">Login</a></li>
+                <li><a href="#" class="login">Register</a></li>
+            </ul>
+           
+
+        </div>
+
+    </header>
+
+    <!-- Header ends -->
+
+    <!-- Register starts -->
+
+    <section class="home" id="home">
+
+    <div class="box-container">
+        <h2>Register</h2>
+        <form action="#">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Enter email" name="name" required>
+            </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" >
+          </div>
+         
+          <button type="button" onclick="saveData()" id="save_btn">Register</button>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- Register ends -->
+
+
+
+
+
+    <!-- script -->
+    <script>
+        function saveData()
+        {
+        let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+
+
+        let user_records=new Array();
+        user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        if(user_records.some((v)=>{
+            return v.email==email
+        })){
+            alert("Duplicate Data");
+        }
+        else{
+            user_records.push({
+                "name":name,
+                "email":email,
+                "password":password
+            })
+            localStorage.setItem("users",JSON.stringify(user_records));
+            alert("Registered Succesfully")
+        }
+        }
+    </script>
+    
+</body>
+</html>

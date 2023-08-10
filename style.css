@@ -1,0 +1,74 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&family=Poppins:wght@500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* variables */
+:root{
+    --main-color: #5754ff;
+    --secondary-color: rgba(156, 155, 155, 0.067);
+    --bg-color: #fff;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+    color: #fff;
+}
+section{
+    padding: 3rem 0 2rem;
+}
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    background: var(--main-color);
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--bg-color);
+}
+.login{
+    padding: 8px 14px;
+    color: var(--bg-color);
+}
+.login:hover{
+    color: #000000;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.home{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+.box-container{
+    margin: 5rem;
+}
+.box-container h2{
+    margin: 1rem 0;
+}
+.box-container input{
+    margin: 5px 0;
+}

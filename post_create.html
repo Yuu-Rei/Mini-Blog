@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Header starts-->
+
+    <header>
+
+        <div class="nav container">
+
+            <a href="#" class="logo">MiniBlog</a>
+            <ul>    
+                <li>Hi, 
+                    <script>
+                        document.write(localStorage.getItem("name"))
+                    </script>
+                    !
+                </li>
+
+                <li><a href="#" class="login">Home</a></li>
+                <li><a onclick="logOut()" class="login">Logout</a></li>
+            </ul>
+           
+
+        </div>
+
+    </header>
+
+    <!-- Header ends -->
+
+    <!-- Home starts -->
+
+    <section class="home" id="home">
+
+        <div class="box-container">
+            <h2>Create a Post</h2>
+            <form action="#">
+                <input type="text" id="title" name="title" placeholder="Enter Title"><br>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Enter Content"></textarea><br>
+                <button type="submit" onclick="saveData()" id="save_btn"> Post </button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Home ends -->
+
+
+
+
+
+    <!-- script -->
+    <script>
+        function saveData()
+        {
+        let title=document.getElementById("title").value;
+        let content=document.getElementById("content").value;
+
+        let post_records=new Array();
+        post_records=JSON.parse(localStorage.getItem("posts"))?JSON.parse(localStorage.getItem("posts")):[]
+        
+        post_records.push({
+            "title":title,
+            "content":content
+        })
+        localStorage.setItem("posts",JSON.stringify(post_records));
+        alert("Post Successful")
+        
+        
+        }
+    </script>
+    
+</body>
+</html>
