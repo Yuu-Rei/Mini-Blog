@@ -17,7 +17,7 @@
 
         <div class="nav container">
 
-            <a href="#" class="logo">MiniBlog</a>
+            <a href="home.html" class="logo">MiniBlog</a>
             <ul>    
                 <li>Hi, 
                     <script>
@@ -26,7 +26,7 @@
                     !
                 </li>
 
-                <li><a href="#" class="login">Home</a></li>
+                <li><a href="home.html" class="login">Home</a></li>
                 <li><a onclick="logOut()" class="login">Logout</a></li>
             </ul>
            
@@ -42,6 +42,12 @@
     <section class="home" id="home">
 
         <div class="box-container">
+
+            <script>
+                document.write(localStorage.getItem("title", post))
+                document.write(localStorage.getItem("content"))
+            </script>
+            
             
             <a href="post_create.html"><button type="button">Create Post</button></a>
             
@@ -56,7 +62,13 @@
 
 
     <!-- script -->
-
+    <script>
+        function logOut(){
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            window.location.href="index.html"
+        }
+    </script>
     
 </body>
 </html>

@@ -26,7 +26,7 @@
                     !
                 </li>
 
-                <li><a href="#" class="login">Home</a></li>
+                <li><a href="home.html" class="login">Home</a></li>
                 <li><a onclick="logOut()" class="login">Logout</a></li>
             </ul>
            
@@ -77,6 +77,14 @@
         
         
         }
+
+        <script>
+        function logOut(){
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            window.location.href="index.html"
+        }
+    </script>
     </script>
     
 </body>
