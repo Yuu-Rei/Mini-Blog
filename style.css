@@ -63,11 +63,19 @@ header{
     align-items: center;
     justify-content: center;
 }
-.box-container{
-    margin: 5rem;
+.home .box-container{
+    padding: 2rem;
+    width: 30%;
+    display: block;
+    margin: 5rem 0;
+    border: 1px solid rgb(102, 102, 102);
+    box-shadow: .5px .5px 2px 2px #a1a1a1;
+    text-align: center;
+    justify-content: center;
 }
 .box-container h2{
     margin: 1rem 0;
+    text-align: center;
 }
 .box-container input{
     margin: 5px 0;
