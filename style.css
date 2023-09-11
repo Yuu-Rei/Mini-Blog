@@ -24,6 +24,9 @@ li{
 section{
     padding: 3rem 0 2rem;
 }
+textarea{
+    resize: none;
+}
 .container{
     max-width: 1068px;
     margin: auto;
